@@ -3,6 +3,7 @@ package helpers
 import scala.concurrent.duration._
 import java.nio.file.{Files, Paths}
 
+import com.ruimo.scoins.{Version, VersionMajorMinor, VersionNo}
 import play.api.Configuration
 import com.typesafe.config.ConfigFactory
 import com.typesafe.config.Config

@@ -17,12 +17,16 @@ class HomeController @Inject()(
   releaseRepo: ReleaseRepo
 ) extends AbstractController(cc) {
   def getLatest(moduleName: String, baseName: String) = Action { implicit request: Request[AnyContent] =>
+    import helpers.VersionJson._
+
     releaseRepo.getLatestPath(moduleName, baseName) match {
       case None => NotFound("No module for " + baseName)
       case Some(release) =>
         Ok(
           Json.obj(
-
+            "fileName" -> release.path.getFileName.toString,
+            "baseName" -> release.baseName,
+            "version" -> release.version
           )
         )
     }

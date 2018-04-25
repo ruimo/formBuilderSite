@@ -2,8 +2,9 @@ package helpers
 
 import java.nio.file.attribute.BasicFileAttributes
 import java.nio.file._
-
 import javax.inject.{Inject, Singleton}
+
+import com.ruimo.scoins.Version
 import play.api.Configuration
 
 case class Release(

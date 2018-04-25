@@ -5,8 +5,11 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.12.4"
 
+resolvers += "ruimo.com" at "http://static.ruimo.com/release"
+
 libraryDependencies += guice
 libraryDependencies += ws
+libraryDependencies += "com.ruimo" %% "scoins" % "1.14"
 libraryDependencies += specs2 % Test
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-feature")
