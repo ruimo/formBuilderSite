@@ -16,7 +16,7 @@ RUN cd /opt/devsite && \
   echo "ls -lh /opt/devsite" >> launch.sh && \
   echo 'kill -9 `cat /opt/devsite/$cmd/RUNNING_PID`' && \
   echo rm -f /opt/devsite/$cmd/RUNNING_PID >> launch.sh && \
-  echo /opt/devsite/$cmd/bin/functionalcaptureserver -J-Xmx512m -DmoduleName=$cmd -Dplay.crypto.secret=\${APP_SECRET} -Dplay.evolutions.db.default.autoApply=true >> launch.sh && \
+  echo /opt/devsite/$cmd/bin/formbuildersite -J-Xmx512m -DmoduleName=$cmd -Dplay.crypto.secret=\${APP_SECRET} -Dplay.evolutions.db.default.autoApply=true >> launch.sh && \
   chmod +x launch.sh
 
 RUN chown -R devuser:devuser /opt/devsite
